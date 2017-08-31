@@ -1,5 +1,5 @@
 {
-  "name": "test electron payroll",
+  "name": "electronpayroll",
   "version": "1.0.0",
   "description": "a personal payroll system",
   "main": "main.js",
