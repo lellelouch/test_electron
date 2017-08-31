@@ -28,7 +28,7 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 
 install:
-- nvm install 7
+- nvm install 6
 - npm install
 
 script:
