@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "test electron payroll",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "a personal payroll system",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -12,15 +12,22 @@
     "dist-multi": "build -wml --ia32 --x64",
     "release": "build --ia32 --x64"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lellelouch/test_electron.git"
+  },
   "keywords": [
     "Electron",
-    "quick",
-    "start",
+    "payroll",
+    "test",
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": {
+	"name": "Michael Reyes,
+    "email": "mot.michaelreyes98@gmail.com",
+    "url": "https://github.com/lellelouch"
+  },
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.6.2",
@@ -28,6 +35,7 @@
   },
   "build": {
     "appId": "com.testelectron.app",
+	"category": "public.app-category.utility",
     "mac": {
       "category": "public.app-category.utilities",
 	  "target": [
