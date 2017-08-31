@@ -4,7 +4,13 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist-win": "build --win --ia32 --x64",
+    "dist-mac": "build --mac --ia32 --x64",
+    "dist-linux": "build --linux --ia32 --x64",
+    "dist-multi": "build -wml --ia32 --x64",
+    "release": "build --ia32 --x64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -23,12 +29,24 @@
   "build": {
     "appId": "com.testelectron.app",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "public.app-category.utilities",
+	  "target": [
+        "zip",
+        "dmg"
+      ],
+      "publish": "github"
+    },
+	"nsis": {
+      "perMachine": true,
+      "oneClick": false,
+      "publish": "github"
+    },
+	"linux": {
+      "category": "Utility",
+      "target": "deb",
+      "publish": "github"
     }
   },
-  "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
+  "main": "main.js",
   "postinstall": "electron-builder install-app-deps"
 }
