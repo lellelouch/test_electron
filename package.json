@@ -35,12 +35,11 @@
   },
   "build": {
     "appId": "com.testelectron.app",
-	"category": "public.app-category.utility",
+	
     "mac": {
       "category": "public.app-category.utilities",
 	  "target": [
-        "zip",
-        "dmg"
+        "zip"
       ],
       "publish": "github"
     },
