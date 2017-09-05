@@ -24,7 +24,7 @@
     "demo"
   ],
   "author": {
-	"name": "Michael Reyes",
+    "name": "Michael Reyes",
     "email": "mot.michaelreyes98@gmail.com",
     "url": "https://github.com/lellelouch"
   },
@@ -35,25 +35,29 @@
   },
   "build": {
     "appId": "com.testelectron.app",
-	
     "mac": {
       "category": "public.app-category.utilities",
-	  "target": [
+      "target": [
         "zip"
       ],
       "publish": "github"
     },
-	"nsis": {
+    "nsis": {
       "perMachine": true,
       "oneClick": false,
       "publish": "github"
     },
-	"linux": {
+    "linux": {
       "category": "Utility",
       "target": "deb",
       "publish": "github"
     }
   },
-  "main": "main.js",
-  "postinstall": "electron-builder install-app-deps"
+  "postinstall": "electron-builder install-app-deps",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-material": "^1.1.4"
+  }
 }

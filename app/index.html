@@ -2,28 +2,72 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>STSB</title>
 	
 	 <link rel="stylesheet" type="text/css" href="css/style.css"></style>
+	 <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css"></style>
+	 <link rel="stylesheet" type="text/css" href="../node_modules/angular-material/angular-material.min.css"></style>
+	 
   </head>
   <body>
-	<div class="toolbar">
-		<div class="icon_container">
-			<img src="iconforapp.png"></img>
+	<div ng-app="app-app" ng-cloak>
+		<div class="resize_top"></div>
+		<div class="toolbar" ng-controller="toolbar-toolbar">
+			<div class="icon_container">
+				<img src="iconforapp.png"></img>
+			</div>
+			<div class="title_title">
+				<h3>STSB</h3>
+			</div>
+			<div class="tools_right">
+				<i class="fa fa-2x fa-window-minimize custom-fa" aria-hidden="true" ng-click="minimize_window();"></i>
+				<i ng-model="determine_unmaximize_maximize_class_icon" class="fa fa-2x fa-{{ determine_unmaximize_maximize_class_icon }} custom-fa" aria-hidden="true" ng-click="unmaximize_maximize();"></i>
+				<i class="fa fa-2x fa-window-close-o custom-fa" aria-hidden="true" ng-click="close_window();"></i>
+			</div>
 		</div>
-	</div>
-	
-	<div style="width: 100%; height: 50px;"></div>
+		
+		<div style="width: 100%; height: 50px;"></div>
   
-    <h1>Hello Universe! (inside app folder)</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+		<div ng-controller="login-login" layout="row" layout-align="center center">
+			<div class="login">
+				<form name="clientLogin">
+					<md-input-container>
+						<md-icon class="name fa fa-2x fa-user-circle-o"></md-icon>
+						<input ng-model="user.name" name="userName" type="text" placeholder="Name" ng-required="true">
+						<div ng-messages="clientLogin.userName.$error">
+							<div ng-message="required">Your full name is required.</div>
+						</div>
+					</md-input-container>
+					<md-input-container md-no-float>
+						<!-- Use floating placeholder instead of label -->
+						<md-icon class="email fa fa-2x fa-lock"></md-icon>
+						<input ng-model="user.password" type="text" placeholder="Password" ng-required="true" name="userPassword">
+						<div ng-messages="clientLogin.userPassword.$error">
+							<div ng-message="required">Your password is required.</div>
+						</div>
+					</md-input-container>
+
+					<md-button class="md-raised md-primary custom-button">Login</md-button>
+				</form>
+			</div>
+		</div>
+  
+		<!--<h1>Hello Universe! (inside app folder)</h1>-->
+		<!-- All of the Node.js APIs are available in this renderer process. -->
+		<!--We are using Node.js <script>document.write(process.versions.node)</script>,
+		Chromium <script>document.write(process.versions.chrome)</script>,
+		and Electron <script>document.write(process.versions.electron)</script>.-->
+	</div>
   </body>
 
   <script>
     // You can also require other files to run in this process
+	require('angular')
+	require('angular-material')
+	require('angular-animate')
+	require('angular-aria')
     require('./renderer.js')
   </script>
+  
+  <script src="js/js.js"></script>
 </html>
